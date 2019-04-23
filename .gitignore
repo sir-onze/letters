@@ -3,3 +3,5 @@
 *.sql
 *.csv
 
+.idea
+.DS_Store
