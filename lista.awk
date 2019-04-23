@@ -1,15 +1,18 @@
 BEGIN {
 FS = ";"
-i=0
-j=0
-r=0
+html_start = "<html><body><h1>Processador de Cartas setecentistas da Etiopia</h1><p>Correspondência entre as cartas e os apelidos dos envolvidos </p>"
+html_end = "</body>\n </html>"
+html_break = "<br>"
+
+print html_start > "html/lista.html"
 }
 
 
+{
+print("("$1,",",$5,")") > "html/lista.html";
+print html_break > "html/lista.html";
+}
+
 END {
-	
-	for (t = 0; t <j; t++){
-		print(cidade[t],resultado[t],data[t]);
-	}
-	print ("Cidades desconhecidas:",nill[i]);
+	print html_end > "html/lista.html";
 }
