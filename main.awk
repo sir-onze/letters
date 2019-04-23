@@ -16,7 +16,7 @@ print(html_link_open,"cidades.html",close_tag,"(a) Contar  o  numero  de  cartas
 
 print html_break > "html/indice.html";
 
-print(html_link_open,"lista.html",close_tag,"(b) criar um index HTML com todos os anos, em que cada ano deve ligar a outra pagina HTML ondeconste, para cada carta desse ano, o tıtulo da carta e o seu resumo.",html_link_close) > "html/indice.html";
+print(html_link_open,"lista.html",close_tag,"(c) criar um index HTML com todos os anos, em que cada ano deve ligar a outra pagina HTML ondeconste, para cada carta desse ano, o tıtulo da carta e o seu resumo.",html_link_close) > "html/indice.html";
 
 print html_end > "html/indice.html";
 }
