@@ -23,7 +23,7 @@ html_break = "<br>"
 		resultado[z]+=1;
 		data[z]=$2;
 	}
-	
+
 }
 
 END {
@@ -41,7 +41,7 @@ function existe(cidade,palavra){
 	for (q = 0; q <length(cidade); q++){
 		if(cidade[q]==palavra) return q;
 			}
-	
+
 	return 0;
 }
 
