@@ -16,6 +16,10 @@ print(html_link_open,"cidades.html",close_tag,"(a) Contar  o  numero  de  cartas
 
 print html_break > "html/indice.html";
 
+print(html_link_open,"index.html",close_tag,"(b)criar um index HTML com todos os anos, em que cada ano deve ligar a outra p ́agina HTML ondeconste, para cada carta desse ano, o t ́ıtulo da carta e o seu resumo.",html_link_close) > "html/indice.html";
+
+print html_break > "html/indice.html";
+
 print(html_link_open,"lista.html",close_tag,"(c) mostrar  a  lista  das  cartas—cada  uma  identificada  pelo  numero,  devidamente  associada  (em  paresnum-nome) aos Apelidos das pessoas envolvidas no assunto relatado.",html_link_close) > "html/indice.html";
 
 print html_end > "html/indice.html";
