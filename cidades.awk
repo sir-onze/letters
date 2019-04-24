@@ -40,13 +40,6 @@ END {
 	print html_start >"html/cidades.html"
 	for (t = 0; t <j; t++){
 		print("A cidade",cidade[t],"tem no registo "resultado[t]," carta(s) escritas.")>"html/cidades.html";
-
-			for (d=0;d<j;d++){
-				print cidade[t];
-				print datas[d];
-
-			}
-
 		print html_break>"html/cidades.html";
 		print html_break>"html/cidades.html";
 	}

@@ -6,21 +6,15 @@ html_break = "<br>"
 html_link_open = "<li> <a href='"
 close_tag ="'>"
 html_link_close= "</a></li>\n"
-i=0
 
+print html_start > "html/index.html";
 }
 
 {
-	datas[i]=$2;
-
-sprintf(stringa, "Number of fingers making up a hand are %f", fingers);
-
+	print $2 > "html/index.html";
+	print html_break > "html/index.html";;
 }
 
 END{
-	for(i in datas){
-		print datas[i] > "html/index.html";
-		print html_break > "html/index.html";
-	}
-
+	print html_end > "html/index.html";;
 }
