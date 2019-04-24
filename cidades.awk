@@ -15,21 +15,20 @@ nome = "html/%s.html"
 
 }
 
-($3=="        "){nill[i]=++i;cidade[j]}
+($3=="        "){nill=++i;cidade[j]}
 
 ($3!="        "){
 	if((z=existe(cidade,$3))==0){
 		cidade[j]=$3;
 		resultado[j]+=1;
+		datas[j][$2][$3] = 0;
 		j++;
-		datas[v]=$2;
-		v++;
 	}
 	else{
+
+		datas[z][$2][$3] = 0;
 		resultado[z]+=1;
-		datas[v]=$2;
-		v++;
-		
+			
 	}
 	
 }
@@ -38,14 +37,20 @@ nome = "html/%s.html"
 
 END {
 	print html_start >"html/cidades.html"
+	
 	for (t = 0; t <j; t++){
 		print("A cidade",cidade[t],"tem no registo "resultado[t]," carta(s) escritas.")>"html/cidades.html";
 		print html_break>"html/cidades.html";
+				for(e in datas[t]){
+					print e >"html/cidades.html";
+		}
+				
+		print html_break>"html/cidades.html";
 		print html_break>"html/cidades.html";
 	}
-	print ("Existem ",nill[i],"de cartas sem registo do local.")>"html/cidades.html";
+	print ("Existem ",nill,"de cartas sem registo do local.")>"html/cidades.html";
 	print html_end > "html/cidades.html"
-	}
+}
 
 
 function existe(cidade,palavra){
