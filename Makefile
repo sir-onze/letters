@@ -5,7 +5,7 @@ run:
 	gawk -f main.awk < cartasetiopia.csv
 
 clean:
-	rm -f /html/cidades.html
-	rm -f /html/index.html
-	rm -f /html/indice.html
-	rm -f /html/lista.html
+	rm "html/cidades.html"
+	rm "html/index.html"
+	rm "html/indice.html"
+	rm "html/lista.html"
