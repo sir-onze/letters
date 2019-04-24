@@ -2,13 +2,16 @@
 BEGIN {
 #include <stdio.h>
 FS = ";"
-i=0
 j=0
-r=0
-html_start = "<html><body><h1>Processador de Cartas setecentistas da Etiopia</h1><p>Numero de cartas por local </p>"
+v=0
+
+html_start = "<html><body><h1>Trabalho Prático de Processamento de Linguagens</h1><p>Datas das cartas </p>"
 html_end = "</body>\n </html>"
 html_break = "<br>"
-
+html_link_open = "<li> <a href='"
+close_tag ="'>"
+html_link_close= "</a></li>\n"
+nome = "html/%s.html"
 
 }
 
@@ -19,10 +22,13 @@ html_break = "<br>"
 		cidade[j]=$3;
 		resultado[j]+=1;
 		j++;
+		datas[v]=$2;
+		v++;
 	}
 	else{
 		resultado[z]+=1;
-		ci=cidade[z]
+		datas[v]=$2;
+		v++;
 		
 	}
 
@@ -39,7 +45,7 @@ END {
 	}
 	print ("Existem ",nill[i],"de cartas sem registo do local.")>"html/cidades.html";
 	print html_end > "html/cidades.html"
-}
+	}
 
 
 function existe(cidade,palavra){
