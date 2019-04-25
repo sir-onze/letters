@@ -4,7 +4,7 @@ run:
 	gawk -f lista.awk < cartasetiopia.csv
 	gawk -f index.awk < cartasetiopia.csv
 	gawk -f main.awk < cartasetiopia.csv
-	open -a firefox html/indice.html
+	firefox html/indice.html
 
 clean:
 	rm -r "html"
