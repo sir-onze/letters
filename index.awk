@@ -32,19 +32,24 @@ print html_start > "html/index.html";
 			files = sprintf(file_short,ano);
 			print html_start > file;
 			print ("Título : ",$4) > file;
+			print ("Resumo: ",$6) > file;
 			print(html_link_open,files,close_tag,a[2],html_link_close) >"html/index.html";
 			titulos=2;
 			print html_end > file;
 		}
 			
 		else{
+			ano=a[2];
 			file = sprintf(file_head,ano);
 			files = sprintf(file_short,ano);
 			
-			print "entrei";
 			for(i in titulo){
-				print ("Titulo:",titulo[i]) > file;
-				print ("Resumo:",resumo[i])	> file;
+				if(titulo[i]!="" && resumo[i]!=""){
+					print ("Titulo:",titulo[i]) > file;
+					print ("Resumo:",resumo[i])	> file;
+					titulo[i]="";
+					resumo[i]="";
+				}
 				print html_break > file;
 				}
 		
