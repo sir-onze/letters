@@ -1,10 +1,16 @@
 run:
-	mkdir html
-	gawk -f cidades.awk < cartasetiopia.csv
-	gawk -f lista.awk < cartasetiopia.csv
-	gawk -f index.awk < cartasetiopia.csv
-	gawk -f main.awk < cartasetiopia.csv
-	firefox html/indice.html
+	sudo mkdir html
+	sudo mkdir dot
+	sudo gawk -f cidades.awk < cartasetiopia.csv
+	sudo gawk -f lista.awk < cartasetiopia.csv
+	sudo gawk -f index.awk < cartasetiopia.csv
+	sudo gawk -f dot.awk < cartasetiopia.csv
+	sudo gawk -f main.awk < cartasetiopia.csv
+	sudo dot -T jpg dot/graph.dot -o dot/graph.jpg
+	sudo open -a firefox html/indice.html
+	
 
 clean:
-	rm -r "html"
+	sudo rm -r "html"
+	sudo rm -r "dot"
+	
