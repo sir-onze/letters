@@ -12,10 +12,10 @@ file_short = "%s.html"
 
 
 ano=0;
-i=1
+i=1;
 titulo[0]=1
 resumo[0]="Empty"
-
+fst=1;
 
 print html_start > "html/index.html";
 
@@ -25,44 +25,40 @@ print html_start > "html/index.html";
 {
 	split($2,aux,".");
 	split(aux[1],a,"        ");
-	if(a[2]!=ano){
-		if(i==1){
-			ano=a[2];
-			file = sprintf(file_head,ano);
-			files = sprintf(file_short,ano);
-			print html_start > file;
-			print ("Título : ",$4) > file;
-			print ("Resumo: ",$6) > file;
-			print(html_link_open,files,close_tag,a[2],html_link_close) >"html/index.html";
-			titulos=2;
-			print html_end > file;
-		}
-			
-		else{
-			ano=a[2];
-			file = sprintf(file_head,ano);
-			files = sprintf(file_short,ano);
-			
-			for(i in titulo){
-				if(titulo[i]!="" && resumo[i]!=""){
-					print ("Titulo:",titulo[i]) > file;
-					print ("Resumo:",resumo[i])	> file;
-					titulo[i]="";
-					resumo[i]="";
-				}
-				print html_break > file;
-				}
-		
-			print(html_link_open,files,close_tag,a[2],html_link_close) >"html/index.html";
-			i=1;
-			ano=0;
-			}
-		}
 	
-	else{
+	
+	
+	if(ano!=a[2]){
+		ano_ant=ano
+		ano=a[2];
+		file = sprintf(file_head,ano_ant);
+		files = sprintf(file_short,ano_ant);
+		print html_start > file;
+		for(j in titulo){
+				if(titulo[j]!="" && resumo[j]!=""){
+					print ("Titulo:",titulo[j]) > file;
+					print html_break > file;
+					print ("Resumo:",resumo[j])	> file;
+					print html_break > file;
+					titulo[j]="";
+					resumo[j]="";
+				}
+			}
+		print html_break > file;
+		print htnl_end > file;
+
+		print(html_link_open,files,close_tag,ano_ant,html_link_close) >"html/index.html";
+		i=1;
 		titulo[i]=$4;
 		resumo[i]=$6;
-		i++;
+	    i++;
+
+	}
+
+	else{
+	titulo[i]=$4;
+	resumo[i]=$6;
+	i++;
 	}
 	
 }
