@@ -1,6 +1,6 @@
 BEGIN {
     FS = ";"
-    html_start = "<html><body><h1>Processador de Cartas setecentistas da Etiopia</h1><p>Correspondência entre as cartas e os apelidos dos envolvidos </p>"
+    html_start = "<html><body><h1><center>Processador de Cartas setecentistas da Etiopia</center></h1><p>Correspondência entre as cartas e os apelidos dos envolvidos </p>"
     html_end = "</body>\n </html>"
     html_break = "<br>"
 

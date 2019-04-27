@@ -5,13 +5,16 @@ BEGIN {
     j=0
     v=0
 
-    html_start = "<html><body><h1>Trabalho Prático de Processamento de Linguagens</h1><p>Datas das cartas </p>"
+    html_start = "<html><body><h1><center> Trabalho Prático de Processamento de Linguagens </center></h1><p><b> Datas das cartas </b></p>"
     html_end = "</body>\n </html>"
     html_break = "<br>"
     html_link_open = "<li> <a href='"
     close_tag ="'>"
     html_link_close= "</a></li>\n"
     nome = "html/%s.html"
+    html_image ="<img src=\"%s\" alt=\"%s\" width="800" height="60" align="left" >"
+
+    image=sprintf(html_image,"../images/sep.png","Separator");
 }
 
 ($3=="        "){
@@ -43,8 +46,10 @@ END {
 				for(e in datas[t]){
 					print e >"html/cidades.html";
 		}
-		print html_break>"html/cidades.html";
-		print html_break>"html/cidades.html";
+		print html_break >"html/cidades.html";
+		print image >"html/cidades.html";
+		print html_break >"html/cidades.html";
+		print html_break >"html/cidades.html";
 	}
 	print ("Existem ",nill,"de cartas sem registo do local.")>"html/cidades.html";
 	print html_end > "html/cidades.html"

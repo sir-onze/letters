@@ -1,11 +1,17 @@
 BEGIN{
 
-html_start = "<html><body><h1>Trabalho Prático de Processamento de Linguagens</h1><p>Apresentação das alíneas </p>"
-html_end = "</body>\n </html>"
+html_start = "<html><body><h1><center> Processador de Cartas setecentistas da Etiopia </center></h1><section><img class=\"mySlides\" src=\"../images/back.png\" style=\"width:100%\";background-color=black></section><section class=\"w3-container w3-center\" style=\"max-width:600px\"><h2 class=\"w3-wide\">Funcionalidades</h2><p class=\"w3-opacity\"><i></i></p></section> "
+
+
+
+
+html_end = "<footer class="w3-container w3-padding-64 w3-center w3-black w3-xlarge"><p class="w3-medium"><center>Powered by Tiago Baptista, Ricardo Pereira, Lucas Pereira</center></a></p></footer></body>\n </html>"
+
 html_break = "<br>"
 html_link_open = "<li> <a href='"
 close_tag ="'>"
 html_link_close= "</a></li>\n"
+html_image ="<img src=\"%s\" alt=\"%s\" width="1024" height="300">"
 
 }
 
@@ -13,25 +19,29 @@ END{
 
 print html_start > "html/indice.html";
 
-print(html_link_open,"cidades.html",close_tag,"(a) Contar  o  numero  de  cartas  por  local  (considere  o  local  NIL  quando  se  desconhece)  relacionando-as com o ano de escrita.",html_link_close) > "html/indice.html";
+print html_break > "html/indice.html";
+print html_break > "html/indice.html";
+
+print(html_link_open,"cidades.html",close_tag,"Consultar número de cartas por cidade",html_link_close) > "html/indice.html";
 
 print html_break > "html/indice.html";
 print html_break > "html/indice.html";
 
-print(html_link_open,"index.html",close_tag,"(b) Criar um index HTML com todos os anos, em que cada ano deve ligar a outra pagina HTML onde conste, para cada carta desse ano, o tıtulo da carta e o seu resumo.",html_link_close) > "html/indice.html";
+print(html_link_open,"index.html",close_tag,"Consultar cartas por ano",html_link_close) > "html/indice.html";
 
 print html_break > "html/indice.html";
 print html_break > "html/indice.html";
 
-print(html_link_open,"lista.html",close_tag,"(c) Mostrar  a  lista  das  cartas—cada  uma  identificada  pelo  numero,  devidamente  associada  (em  paresnum-nome) aos Apelidos das pessoas envolvidas no assunto relatado.",html_link_close) > "html/indice.html";
+print(html_link_open,"lista.html",close_tag,"Consultar correspondência entre cartas e apelidos dos envolvidos",html_link_close) > "html/indice.html";
 
 print html_break > "html/indice.html";
 print html_break > "html/indice.html";
 
 
-print(html_link_open,"dot.html",close_tag,"(d) Desenhar um grafo (em DOT) que relacione cada autor (identificado pelo seu nome) com o destinatario(tambem identificado pelo nome). ",html_link_close) > "html/indice.html";
+print(html_link_open,"dot.html",close_tag,"Consultar relação entre autores e destinatários",html_link_close) > "html/indice.html";
 
-
+print html_break > "html/indice.html";
+print html_break > "html/indice.html";
 
 print html_end > "html/indice.html";
 }

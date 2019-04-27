@@ -1,11 +1,12 @@
 BEGIN{
     FS = ";"
-    html_start = "<html><body><h1>Trabalho Prático de Processamento de Linguagens</h1><p>anos das cartas </p>"
+    html_start = "<html><body><h1><center>Processador de Cartas setecentistas da Etiopia</center></h1><p><b>Anos das cartas </b></p>"
     html_end = "</body>\n </html>"
     html_break = "<br>"
     html_link_open = "<li> <a href='"
     close_tag ="'>"
     html_link_close= "</a></li>\n"
+    html_image ="<center><img src=\"%s\" alt=\"%s\" width="1024" height="60" style=\"center\"></center>"
 
     file_head = "html/%s.html"
     file_short = "%s.html"
@@ -16,6 +17,7 @@ BEGIN{
     resumo[0]="Empty"
     fst=1;
 
+    image=sprintf(html_image,"../images/sep.png","Separator");
     print html_start > "html/index.html";
 }
 
@@ -26,6 +28,9 @@ BEGIN{
 	if(ano!=a[2]){
 		ano_ant=ano
 		ano=a[2];
+		if(ano!=0){
+
+		}
 		file = sprintf(file_head,ano_ant);
 		files = sprintf(file_short,ano_ant);
 		print html_start > file;
@@ -34,6 +39,10 @@ BEGIN{
 				print ("Titulo:",titulo[j]) > file;
 				print html_break > file;
 				print ("Resumo:",resumo[j])	> file;
+				print html_break > file;
+				print html_break > file;
+				print image > file;
+				print html_break > file;
 				print html_break > file;
 				titulo[j]="";
 				resumo[j]="";
