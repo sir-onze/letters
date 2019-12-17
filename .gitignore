@@ -1,6 +1,5 @@
 .projectile
 *.txt
-*.csv
 
 .idea
 .DS_Store
